@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, use } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import Flashcard from './components/Flashcard';
 import { getRandomCharacters } from './data/hiragana';
@@ -55,16 +55,17 @@ function App() {
     }
   };
 
-  const nextCard = () => {
-    if (currentIndex < gameCharacters.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      setUserAnswer('');
-      setShowAnswer(false);
-      setFeedback('');
-    } else {
-      setIsGameActive(false);
-    }
-  };
+const nextCard = useCallback(() => {
+  if (currentIndex < gameCharacters.length - 1) {
+    setCurrentIndex((i) => i + 1);
+    setUserAnswer('');
+    setShowAnswer(false);
+    setFeedback('');
+  } else {
+    setIsGameActive(false);
+  }
+}, [currentIndex, gameCharacters.length]);
+
 
   const handleKeyPress = useCallback(
     (e) => {
