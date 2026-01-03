@@ -70,7 +70,7 @@ export const HIRAGANA_CHARACTERS = [
 ];
 
 // Utility function to get random unique characters
-export const getRandomCharacters = (count = 20) => {
-  const shuffled = [...HIRAGANA_CHARACTERS].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, Math.min(count, HIRAGANA_CHARACTERS.length));
+export const getRandomCharacters = (characters, count) => {
+  const shuffled = [...characters].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, Math.min(count, characters.length));
 };

@@ -1,4 +1,4 @@
-.dictionary {
+.training {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -6,7 +6,7 @@
   animation: fadeIn 0.5s ease-out;
 }
 
-.dictionary-header {
+.training-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@
   gap: 1rem;
 }
 
-.dictionary-title {
+.training-title {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 2rem;
   font-weight: 900;
@@ -67,7 +67,7 @@
   box-shadow: 0 2px 0 #D88C47, 0 3px 8px var(--shadow);
 }
 
-.dictionary-info {
+.training-info {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.1rem;
@@ -75,20 +75,20 @@
   font-weight: 600;
 }
 
-.dictionary-grid {
+.training-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.dict-card {
+.training-card {
   perspective: 1000px;
   cursor: pointer;
   height: 140px;
 }
 
-.dict-card-inner {
+.training-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -96,12 +96,12 @@
   transform-style: preserve-3d;
 }
 
-.dict-card.flipped .dict-card-inner {
+.training-card.flipped .training-card-inner {
   transform: rotateY(180deg);
 }
 
-.dict-card-front,
-.dict-card-back {
+.training-card-front,
+.training-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -115,24 +115,24 @@
   transition: all 0.3s ease;
 }
 
-.dict-card:hover .dict-card-front,
-.dict-card:hover .dict-card-back {
+.training-card:hover .training-card-front,
+.training-card:hover .training-card-back {
   box-shadow: 0 8px 25px var(--shadow);
   transform: translateY(-3px);
 }
 
-.dict-card-front {
+.training-card-front {
   background: linear-gradient(135deg, white 0%, var(--cream) 100%);
   border: 3px solid var(--primary-red);
 }
 
-.dict-card-back {
+.training-card-back {
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
   border: 3px solid var(--accent-yellow);
   transform: rotateY(180deg);
 }
 
-.dict-character {
+.training-character {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 4rem;
   font-weight: 900;
@@ -141,7 +141,7 @@
   text-shadow: 2px 2px 0 rgba(230, 57, 70, 0.1);
 }
 
-.dict-romaji {
+.training-romaji {
   font-family: 'Outfit', sans-serif;
   font-size: 2rem;
   font-weight: 800;
@@ -149,14 +149,14 @@
   margin-bottom: 0.5rem;
 }
 
-.dict-character-small {
+.training-character-small {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.5rem;
   color: var(--accent-yellow);
   opacity: 0.8;
 }
 
-.dictionary-footer {
+.training-footer {
   text-align: center;
   padding: 1.5rem;
   background: white;
@@ -169,16 +169,16 @@
 }
 
 @media (max-width: 768px) {
-  .dictionary {
+  .training {
     padding: 1rem;
   }
 
-  .dictionary-header {
+  .training-header {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .dictionary-title {
+  .training-title {
     font-size: 1.5rem;
     order: -1;
     margin-bottom: 1rem;
@@ -190,51 +190,51 @@
     padding: 1rem;
   }
 
-  .dictionary-grid {
+  .training-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 1rem;
   }
 
-  .dict-card {
+  .training-card {
     height: 120px;
   }
 
-  .dict-character {
+  .training-character {
     font-size: 3rem;
   }
 
-  .dict-romaji {
+  .training-romaji {
     font-size: 1.5rem;
   }
 
-  .dict-character-small {
+  .training-character-small {
     font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .dictionary-grid {
+  .training-grid {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     gap: 0.8rem;
   }
 
-  .dict-card {
+  .training-card {
     height: 100px;
   }
 
-  .dict-character {
+  .training-character {
     font-size: 2.5rem;
   }
 
-  .dict-romaji {
+  .training-romaji {
     font-size: 1.2rem;
   }
 
-  .dict-character-small {
+  .training-character-small {
     font-size: 1rem;
   }
 
-  .dictionary-info {
+  .training-info {
     font-size: 0.9rem;
   }
 }
