@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, use } from 'react';
 import './App.css';
 import Flashcard from './components/Flashcard';
 import { getRandomCharacters } from './data/hiragana';
@@ -66,18 +66,21 @@ function App() {
     }
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = useCallback(
+    (e) => {
     if (showAnswer && e.key === 'Enter') {
       nextCard();
     }
-  };
+  },
+  [showAnswer, nextCard]
+);
 
   useEffect(() => {
     if (showAnswer) {
       window.addEventListener('keypress', handleKeyPress);
       return () => window.removeEventListener('keypress', handleKeyPress);
     }
-  }, [showAnswer, currentIndex]);
+  }, [showAnswer, handleKeyPress]);
 
   const getCurrentChar = () => {
     if (!gameCharacters || gameCharacters.length === 0) return null;
