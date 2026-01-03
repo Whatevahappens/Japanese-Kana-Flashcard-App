@@ -176,18 +176,25 @@
   .training-header {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.8rem;
   }
 
   .training-title {
     font-size: 1.5rem;
     order: -1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .back-button,
   .flip-all-button {
     width: 100%;
     padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .training-info {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .training-grid {
@@ -210,16 +217,44 @@
   .training-character-small {
     font-size: 1.2rem;
   }
+
+  .training-footer {
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .training {
+    padding: 0.8rem;
+  }
+
+  .training-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .training-title {
+    font-size: 1.3rem;
+  }
+
+  .back-button,
+  .flip-all-button {
+    padding: 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .training-info {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
   .training-grid {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
     gap: 0.8rem;
   }
 
   .training-card {
-    height: 100px;
+    height: 105px;
   }
 
   .training-character {
@@ -227,14 +262,46 @@
   }
 
   .training-romaji {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .training-character-small {
     font-size: 1rem;
   }
 
+  .training-footer {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .training-title {
+    font-size: 1.2rem;
+  }
+
   .training-info {
+    font-size: 0.85rem;
+  }
+
+  .training-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .training-card {
+    height: 95px;
+  }
+
+  .training-character {
+    font-size: 2.2rem;
+  }
+
+  .training-romaji {
+    font-size: 1.1rem;
+  }
+
+  .training-character-small {
     font-size: 0.9rem;
   }
 }

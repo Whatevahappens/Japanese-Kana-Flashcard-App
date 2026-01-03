@@ -133,12 +133,21 @@
   border: 3px solid var(--primary-blue);
 }
 
-.progress-info {
+.header-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.progress-info {
+  display: flex;
+  gap: 1.5rem;
   font-weight: 800;
   font-size: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .question-count {
@@ -147,6 +156,33 @@
 
 .current-score {
   color: var(--primary-blue);
+}
+
+.finish-now-button {
+  background: var(--error);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 0 #C85A44, 0 4px 10px var(--shadow);
+  white-space: nowrap;
+}
+
+.finish-now-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #C85A44, 0 6px 15px var(--shadow);
+}
+
+.finish-now-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 #C85A44, 0 3px 8px var(--shadow);
 }
 
 .progress-track {
@@ -398,11 +434,15 @@
 
   .test-setup,
   .test-results {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
   }
 
   .test-title {
     font-size: 1.5rem;
+  }
+
+  .test-description {
+    font-size: 1rem;
   }
 
   .quantity-selector {
@@ -410,9 +450,53 @@
   }
 
   .quantity-button {
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    min-width: 55px;
+  }
+
+  .start-test-button {
+    padding: 1rem 2rem;
     font-size: 1rem;
-    min-width: 60px;
+  }
+
+  .test-header {
+    padding: 1rem;
+  }
+
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .progress-info {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .finish-now-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .answer-input {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .submit-button,
+  .next-button,
+  .retry-button {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .feedback-message {
+    font-size: 1rem;
+    padding: 1.2rem;
   }
 
   .score-number {
@@ -421,5 +505,130 @@
 
   .score-total {
     font-size: 2.5rem;
+  }
+
+  .score-percentage {
+    font-size: 1.3rem;
+  }
+
+  .perfect-score {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .test {
+    padding: 0.5rem;
+  }
+
+  .test-setup,
+  .test-results {
+    padding: 1.5rem 1rem;
+  }
+
+  .test-title {
+    font-size: 1.3rem;
+  }
+
+  .test-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .quantity-selector {
+    gap: 0.5rem;
+  }
+
+  .quantity-button {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+    min-width: 50px;
+  }
+
+  .start-test-button {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .back-button {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .test-header {
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .progress-info {
+    font-size: 0.8rem;
+  }
+
+  .finish-now-button {
+    font-size: 0.8rem;
+    padding: 0.7rem;
+  }
+
+  .answer-input {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  .submit-button,
+  .next-button,
+  .retry-button {
+    font-size: 0.9rem;
+    padding: 0.9rem;
+  }
+
+  .feedback-message {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  .hint-text {
+    font-size: 0.75rem;
+  }
+
+  .score-number {
+    font-size: 3.5rem;
+  }
+
+  .score-total {
+    font-size: 2rem;
+  }
+
+  .score-percentage {
+    font-size: 1.1rem;
+  }
+
+  .perfect-score {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .test-title {
+    font-size: 1.2rem;
+  }
+
+  .quantity-button {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.8rem;
+    min-width: 45px;
+  }
+
+  .progress-info {
+    font-size: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .score-number {
+    font-size: 3rem;
+  }
+
+  .score-total {
+    font-size: 1.8rem;
   }
 }

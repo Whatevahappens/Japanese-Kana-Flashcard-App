@@ -24,6 +24,10 @@ function Test({ characters, scriptName, onBack }) {
     setFeedback('');
   };
 
+  const finishNow = () => {
+    setIsTestActive(false);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!userAnswer.trim()) return;
@@ -136,13 +140,18 @@ function Test({ characters, scriptName, onBack }) {
         // Test screen
         <div className="test-game">
           <div className="test-header">
-            <div className="progress-info">
-              <span className="question-count">
-                Question {currentIndex + 1} / {testQuantity}
-              </span>
-              <span className="current-score">
-                Score: {score} / {testQuantity}
-              </span>
+            <div className="header-top">
+              <div className="progress-info">
+                <span className="question-count">
+                  Question {currentIndex + 1} / {testQuantity}
+                </span>
+                <span className="current-score">
+                  Score: {score} / {testQuantity}
+                </span>
+              </div>
+              <button onClick={finishNow} className="finish-now-button">
+                Finish Now
+              </button>
             </div>
             <div className="progress-track">
               <div 

@@ -40,7 +40,7 @@ function App() {
       <div className="background-pattern"></div>
       
       <header className="header">
-        <h1 className="title">
+        <h1 className="title" onClick={backToHome} style={{ cursor: 'pointer' }}>
           <span className="title-japanese">仮名マスター</span>
           <span className="title-english">Kana Master</span>
         </h1>
