@@ -196,6 +196,39 @@ body {
   box-shadow: 0 3px 0 var(--dark-blue), 0 4px 10px var(--shadow);
 }
 
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dictionary-button {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 0 var(--dark-blue), 0 8px 20px var(--shadow);
+}
+
+.dictionary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 0 var(--dark-blue), 0 12px 30px var(--shadow);
+}
+
+.dictionary-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 var(--dark-blue), 0 4px 10px var(--shadow);
+}
+
 .results {
   text-align: center;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import Flashcard from './components/Flashcard';
+import Dictionary from './components/Dictionary';
 import { getRandomCharacters } from './data/hiragana';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [isGameActive, setIsGameActive] = useState(false);
   const [feedback, setFeedback] = useState('');
   const [highScore, setHighScore] = useState(0);
+  const [showDictionary, setShowDictionary] = useState(false);
 
   // Load high score from localStorage on mount
   useEffect(() => {
@@ -38,6 +40,16 @@ function App() {
     setUserAnswer('');
     setShowAnswer(false);
     setFeedback('');
+    setShowDictionary(false);
+  };
+
+  const openDictionary = () => {
+    setShowDictionary(true);
+    setIsGameActive(false);
+  }
+
+  const closeDictionary = () => {
+    setShowDictionary(false);
   };
 
   const handleSubmit = (e) => {
@@ -153,6 +165,9 @@ const nextCard = useCallback(() => {
                 </div>
                 <button onClick={startGame} className="start-button">
                   Start Game
+                </button>
+                <button onClick={openDictionary} className="dictionary-button">
+                  📖 Open Hiragana Dictionary
                 </button>
               </div>
             )}
